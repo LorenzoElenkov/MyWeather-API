@@ -284,12 +284,12 @@ const Home = () => {
           <div className='searchOverview'>
             <div className='minTemp'>
               <span className='title'>Minimum &#8451;</span>
-              <span className='data'>{fetchedCity.forecast.forecastday[0].day.mintemp_c}<span>&#8451;</span></span>
+              <span className='data'>{fetchedCity.forecast?.forecastday[0].day.mintemp_c}<span>&#8451;</span></span>
               <img src={minTemp} alt=''/>
             </div>
             <div className='maxTemp'>
               <span className='title'>Maximum &#8451;</span>
-              <span className='data'>{fetchedCity.forecast.forecastday[0].day.maxtemp_c}<span>&#8451;</span></span>
+              <span className='data'>{fetchedCity.forecast?.forecastday[0].day.maxtemp_c}<span>&#8451;</span></span>
               <img src={maxTemp} alt=''/>
             </div>
             <div className='windSpeed'>
