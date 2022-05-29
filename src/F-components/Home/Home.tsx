@@ -279,7 +279,6 @@ const Home = () => {
           </div>
           <div className='searchDayHours'>
             {hoursArray}
-            <div/>
           </div>
           <div className='searchOverview'>
             <div className='minTemp'>
@@ -374,8 +373,9 @@ const StyledSearch = styled.div<IStyledHome>`
   display: grid;
   grid-template-columns: 10px 1fr 10px;
   grid-template-rows: 12% repeat(4, 22%);
-  width: 100vw;
+  width: 100%;
   height: 100%;
+  border: 1px solid black;
 
   .searchImage {
     grid-column: 1/4;
@@ -498,17 +498,17 @@ const StyledSearch = styled.div<IStyledHome>`
       }
 
       & > div > img {
-        width: 45%;
-        height: 50%;
+        width: 50%;
       }
 
+      & > div:first-child {
+      }
       & > div:nth-child(2n) {
         background: rgba(0, 0, 0, 0.05);
         border-radius: 10px;
       }
 
       & > div:last-child {
-        width: 20px;
       }
 
       & > div > span {
@@ -527,6 +527,9 @@ const StyledSearch = styled.div<IStyledHome>`
       & > div.today {
         background: rgba(255, 145, 0, 0.3);
         border-radius: 10px;
+      }
+      @media screen and (min-width: 1200px) {
+        width: calc(100% - 8px);
       }
     }
 
@@ -609,7 +612,12 @@ const StyledSearch = styled.div<IStyledHome>`
       }
     }
 
+    
   }
+  @media screen and (min-width: 1200px) {
+      width: 550px;
+      left: ${props => props.clicked ? 'calc(50% - 275px)' : '-110vw'};
+    }
 `;
 
 const StyledHome = styled.div<IStyledHome>`
